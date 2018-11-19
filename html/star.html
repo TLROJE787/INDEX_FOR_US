@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<link rel="stylesheet" type="text/css" href="css/stylie.css" />
+<link rel="stylesheet" type="text/css" href="css/animation.css" />
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+
+<style scoped>
+       /* 导航 */
+        .clear-fix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .container{
+            width: 100%;
+            height: 60px;
+            background: rgba(23,106,178,.5);
+            position: absolute;
+            top:0;
+            left: 0;
+            z-index: 2;
+        }
+        .wrap{
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            height: 60px;
+            /*line-height: 60px;*/
+        }
+        .header{
+            position: absolute;
+            width: 1200px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 12px;
+        }
+        .header a{
+            color: #fff;
+        }
+        .header-left{
+            float: left;
+            text-align: center;
+        }
+        .header span{
+            padding: 3px 15px;
+            display: block;
+        }
+        .header-left .name{
+            border-bottom: 1px solid #ffffff;
+        }
+        .header-right {
+            float: right;
+            margin-top: 16px;
+        }
+        .header-right>li{
+            float: left;
+            margin-left: 25px;
+            text-align: center;
+            position: relative;
+        }
+        .header-right li a{
+            display: block;
+            padding:0 8px;
+        }
+        .header-right li a div{
+            height: 3px;
+            background: #ff0000;
+            margin-top: 5px;
+            position: absolute;
+            left: 0;
+            width: 0;
+        }
+        .header-right li.header-active a div{
+            width: 100%;
+        }
+        .header-right li a:hover>div{
+            display: inline-block;
+            width: 100%;
+            background: #f00;
+            -webkit-transition: width .2s linear;
+            -moz-transition: width .2s linear;
+            -ms-transition: width .2s linear;
+            -o-transition: width .2s linear;
+            transition: width .2s linear;
+        }
+        /* 导航结束 */
+        /* 共同页 */
+        .person-container{
+          display: block;
+          width: 170px;
+          height: 170px;
+          background: blue;
+          z-index: 1;
+          border-radius: 100%;
+          position: relative;
+          top:0;
+          left: 0;
+          transition: all 1.7s ease-in-out;
+          }
+        #lxx{
+          background: url('./img/lxx.jpg');
+        }
+        #zc{
+          background: url('./img/zc.jpg');
+        
+        }
+        .person-container-we{
+            position: fixed;
+            top: 60px;
+            /* padding-top: 25px; */
+            width: 1200px;
+            height: 340px;
+            color: #323232;
+            /* background: red; */
+            margin-top:500px;
+        }
+        .all{
+            width: 100%;
+            height: 1200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content:center;
+            background: url('./img/body_repeat.jpg');
+            transition: all .7s ease-in-out;
+            /* display: none; */
+        }
+        /* @keyframes wait1s{
+            0%{}
+            50%{}
+            75%{}
+            100%{}
+        } */
+        .big-img{
+            position: absolute;
+            top:60px;
+            left: 0;
+            height: 500px;
+            width: 100%;
+            /* background: yellow; */
+            background: url('./img/banner.jpg') no-repeat center center;
+            transition: all .7s ease-in-out;
+            /* display: none; */
+        }
+        .big-img-title{
+            display: block;
+            margin-top: 70px;
+            margin-bottom: 85px;
+            font-family: arial;
+            font-size: 60px;
+            color: #ffffff;
+            text-align: center;
+        }
+        .banner-introduce {
+            display: block;
+            margin: 0 auto;
+            width: 880px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+        .person-container-left{
+            width: 50%;
+            height: 100%;
+            float: left;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        }
+        .person-container-right{
+            width: 50%;
+            height: 100%;
+            float: left;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        }
+        .person-text{
+            display: block;
+            margin-bottom: 7px;
+            padding-bottom: 7px;
+            width: 100%;
+            border-bottom: 3px solid #000000;
+            font-size: 24px;
+            text-align: center;
+            
+        }
+        .cont-info-heart {
+            display: block;
+            position: absolute;
+            top: 170px;
+            left: 50%;
+            margin-left: -79px;
+            width: 160px;
+            height: 140px;
+            z-index: 3;
+        }
+        .banner-sign {
+            display: block;
+            margin: 30px auto 0;
+            width: 880px;
+            font-size: 24px;
+            color: #ffffff;
+            text-align: right;
+        }
+        .banner-sign {
+            display: block;
+            margin: 30px auto 0;
+            width: 880px;
+            font-size: 24px;
+            color: #ffffff;
+            text-align: right;
+        }
+        .zc-text{
+            font-family: verdana, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 4.2pt;
+        }
+/* 共同页结束 */
+/* 星空页 */
+        .star-container{
+            width: 100%;
+            height: 100%;
+            /* background: rgba(23,106,178,.3); */
+            z-index: -1;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+.star-word-container-zc{
+    width: 100%;
+    height: 328px;
+    /* background: red; */
+    position: absolute;
+    top: 270px;
+    left: 0;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.star-word-container-lxx{
+    width: 100%;
+    height: 328px;
+    /* background: red; */
+    position: absolute;
+    top: 270px;
+    left: 0;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.star-textH{
+    /* font-family: verdana, sans-serif;
+font-size: 18px;
+font-weight: bold;
+text-decoration: underline;
+text-align: center;
+letter-spacing: 4.2pt; */
+}
+.star-textO{
+    margin-bottom: 15px;
+    color: #fff;
+}
+.star-text-header{
+    width:500px;
+    height:40x;
+    /* background:yellow; */
+    margin:30px auto;
+    padding: 10px 20px;
+    border-bottom: 1px #fff solid;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+
+}
+.star-text-other{
+    width:200px;
+    height:40x;
+    /* background:yellow; */
+    font-size: 12px;
+    font-family: "Microsoft yahei";
+    margin:7px auto;
+    text-align: center; 
+    opacity: 0;
+    transition: all .6s ease-in-out;
+}
+.star-text-bottom{
+    margin-top:113px;
+    width: 400px; 
+    height:40x;
+    padding: 10px 20px;
+    border-bottom: 1px #fff solid;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+    </style>
+
+<!--[if IE]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+        <div class="container demo-1">
+                    <div class="container">
+                        <div class="wrap">
+                            <div class="header clear-fix">
+                                <div class="header-left">
+                                    <span class="name">李小雪&&张闯</span>
+                                    <span>双人博客</span>
+                                </div>
+                                <ul class="header-right clear-fix">
+                                    <li class="header-active" onclick="active(1)">
+                                        <a href="https://tlroje787.github.io/SELWEB/">
+                                            首页
+                                            <div></div>
+                                        </a>
+                                    </li>
+                                    <li onclick="active(2)" class="">
+                                            <a href="https://tlroje787.github.io/SELWEB/">
+                                                我们的简历
+                                                <div></div>
+                                            </a>
+                                    </li>
+                                    <li onclick="active(3)" class="">
+                                            <a href="https://tlroje787.github.io/SELWEB/">
+                                                我们的作品集
+                                                <div></div>
+                                            </a>
+                                    </li>
+                                    <li onclick="active(4)" class="">
+                                            <a href="https://tlroje787.github.io/SELWEB/">
+                                                我们的个人技能
+                                                <div></div>
+                                            </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <span style="position:absolute;">aaa</span>
+            <div class="content">
+                <div id="large-header" class="large-header">
+                    <canvas id="demo-canvas"></canvas>
+          <!-- START MY PROJECT -->
+          <!-- 共同页 -->
+          <div class="all">
+                <div class="big-img">
+                    <span class="big-img-title">Record Our Love Story With Words</span>
+                    <span class="banner-introduce">欢迎来到张闯&amp;李小雪的博客，这里有我们的相关介绍。请点击其中一个人的头像显示详细内容。有我们的简历。因为目前我们都是大三学生，所以还有一些不足，但依然很欢迎各位观看。</span>
+                    <span class="banner-sign">————张闯&amp;李小雪</span>
+                </div>
+                <div class="person-container-we clearfix">
+                        <img class="cont-info-heart" src="http://www.jzdlink.com/wordpress/wp-content/themes/ourLove/images/blog_heart.png" onclick="addMoveClass('we')">
+                    <div class="person-container-left clearfix">
+                        <div id="zc" class='person-container' onclick="addMoveClass('zc')"></div>
+                        <h5 class="person-text">张闯</h5>
+                        <span class="zc-text clearfix">人生一路，几多起伏，昨日花开，谁能自主。</span>
+                    </div>
+                    <div class="person-container-right">
+                        <div id="lxx" class='person-container clearfix' onclick="addMoveClass('lxx')"></div>
+                        <h5 class="person-text">李小雪</h5>
+                        <span class="zc-text clearfix">烟花绽放，热烈热心，碎屑纷飞，尘世风中。</span>
+                    </div>    
+                  </div>
+          </div>
+          <!-- 共同页结束 -->
+          <!-- 星空个人介绍页 -->
+          <div class="star-container">
+                <!-- <div class="home_info1 ani  fadeInUp animated" swiper-animate-effect="fadeInUp" swiper-animate-delay="2.2s" swiper-animate-style-cache=" " style="visibility: visible;animation-delay:2.2s;-webkit-animation-delay:2.2s;"><p>人生就是一道坡，只有不懈攀登，才能到达顶坡，实现自我的最高价值！</p></div> -->
+                <div class="star-word-container-zc">
+                    <div class="star-text-header">
+                            <span class="star-textH">人生就是一道坡，只有不懈攀登，才能到达顶坡，实现自我的最高价值！</span>
+                    </div>                     
+                    <div class="star-text-other">
+                            <span class="star-textO">我叫张闯</span>
+                    </div>
+                    <div class="star-text-other">
+                            <span class="star-textO">21岁</span>
+                    </div> 
+                    <div class="star-text-other">
+                            <span class="star-textO">前端开发工程师</span>
+                    </div> 
+                    <div class="star-text-other">
+                            <span class="star-textO">手机：18841440695</span>
+                    </div> 
+                    <div class="star-text-other">
+                            <span class="star-textO">QQ：1753587865</span>
+                    </div>
+                    <div class="star-text-bottom">
+                            <span class="star-textH">备注：再次点击当前头像-进入张闯个人首页。<br/>点击心型图标回到主页面</span>
+                    </div>       
+                </div>
+                <div class="star-word-container-lxx">
+                        <div class="star-text-header">
+                                <span class="star-textH">人生就是一道坡，只有不懈攀登，才能到达顶坡，实现自我的最高价值！</span>
+                        </div>                     
+                        <div class="star-text-other">
+                                <span class="star-textO">我叫李小雪</span>
+                        </div>
+                        <div class="star-text-other">
+                                <span class="star-textO">22岁</span>
+                        </div> 
+                        <div class="star-text-other">
+                                <span class="star-textO">前端开发工程师</span>
+                        </div> 
+                        <div class="star-text-other">
+                                <span class="star-textO">手机：18841440695</span>
+                        </div> 
+                        <div class="star-text-other">
+                                <span class="star-textO">QQ：1753587865</span>
+                        </div>
+                        <div class="star-text-bottom">
+                                <span class="star-textH">备注：再次点击当前头像-进入李小雪个人首页。<br/>点击心型图标回到主页面</span>
+                        </div>       
+                    </div>
+          </div>
+          <!-- HERE STOP -->
+</div>
+</div>
+        </div><!-- /container -->
+        <script src="js/TweenLite.min.js"></script>
+        <script src="js/EasePack.min.js"></script>
+        <script src="js/rAF.js"></script>
+        <script src="js/demo-1.js"></script>
+
+    </body>
+    <script>
+                active=function(index){
+                     var aLi=document.getElementsByClassName('header-right');
+                     var arr=aLi[0].childNodes;
+                     arr[0].childNodes[0].classList.remove('header-active');
+                     for(var i=0;i<4;i++){
+                         arr[i].classList.remove('header-active');
+                     }
+                     setTimeout(function () {
+                         aLi[0].childNodes[index-1].classList.add("header-active");
+                     },100);
+            }
+            // 头像点击事件
+            var tempForAddZc=false;
+            var tempForAddLxx=false;
+            var addMoveClass=function(id){
+                // alert(a);
+                var self=document.getElementById(id);
+                var zc=document.getElementById('zc');
+                var lxx=document.getElementById('lxx');
+                var BigImg=document.getElementsByClassName('big-img')[0];
+                var Bg=document.getElementsByClassName('all')[0];
+                var lxxIntroduce=document.getElementsByClassName('star-word-container-lxx')[0];
+                var zcIntroduce=document.getElementsByClassName('star-word-container-zc')[0];
+                var othersArr=document.getElementsByClassName('star-text-other');
+                // console.log(self);
+                switch (id) {
+                    case 'zc':
+                        {
+                            if(tempForAddZc==true){
+                                // alert('sec');
+                                window.location.href = 'http://www.baidu.com/';
+                            }
+                            console.log(tempForAddZc);
+                            tempForAddZc=true;
+                            tempForAddLxx=false;
+                            console.log(tempForAddZc);
+                            self.style.left="279px";
+                            self.style.top="-500px";
+                            lxx.style.left=0;
+                            lxx.style.top=0;
+                            BigImg.style.left=BigImg.offsetWidth+'px';
+                            setTimeout(()=>{Bg.style.top=730+'px';Bg.style.opacity=0.5;Bg.style.index=-1;},2000);
+                            lxxIntroduce.style.opacity=0;
+                            zcIntroduce.style.opacity=1;
+                            setTimeout(()=>{othersArr[0].style.opacity=1;
+                                setTimeout(()=>{othersArr[1].style.opacity=1;
+                                    setTimeout(()=>{othersArr[2].style.opacity=1;
+                                        setTimeout(()=>{othersArr[3].style.opacity=1;
+                                            setTimeout(()=>{othersArr[4].style.opacity=1;
+                                
+                            },600)    
+                            },600)    
+                            },600)    
+                            },600)    
+                            },2000)                   
+                        }
+                        break;
+                    case 'lxx':
+                        {
+                            if(tempForAddLxx==true){
+                                // 在这里换成自己的地址
+                                window.location.href = 'https://www.so.com/';
+                            }
+                            console.log(tempForAddZc);
+                            tempForAddZc=false;
+                            tempForAddLxx=true;
+                            console.log(tempForAddZc);
+                            self.style.left="-323px";
+                            self.style.top="-500px";
+                            zc.style.left=0;
+                            zc.style.top=0;
+                            BigImg.style.left=BigImg.offsetWidth+'px';
+                            setTimeout(()=>{Bg.style.top=730+'px';Bg.style.opacity=0.5;Bg.style.index=-1;},1700);
+                            lxxIntroduce.style.opacity=1;
+                            zcIntroduce.style.opacity=0;
+                            setTimeout(()=>{othersArr[5].style.opacity=1;
+                                setTimeout(()=>{othersArr[6].style.opacity=1;
+                                    setTimeout(()=>{othersArr[7].style.opacity=1;
+                                        setTimeout(()=>{othersArr[8].style.opacity=1;
+                                            setTimeout(()=>{othersArr[9].style.opacity=1;
+                                
+                            },600)    
+                            },600)    
+                            },600)    
+                            },600)    
+                            },2000)    
+                        }
+                        break;
+                    case 'we':
+                        {
+                            lxx.style.left=0;
+                            lxx.style.top=0;
+                            zc.style.left=0;
+                            zc.style.top=0;
+                            BigImg.style.left=0;
+                            setTimeout(()=>{Bg.style.top=0+'px';Bg.style.opacity=1;Bg.style.index=0;},2000);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            // 头像点击事件结束            
+    </script>
+<!-- 注释：
+转到我的网站473行
+转到小雪网站504行
+作品 技能 简历
+-->
