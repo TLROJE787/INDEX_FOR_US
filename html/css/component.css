@@ -2,7 +2,7 @@
 .large-header {
     position: relative;
     width: 100%;
-    background-image: url('../../../assets/img/home-bg.png');
+    background-image: url('../../../assets/html/img/home-bg.png');
     /* background: url('../img/body_repeat.jpg'); */
     overflow: hidden;
     background-size: cover;
