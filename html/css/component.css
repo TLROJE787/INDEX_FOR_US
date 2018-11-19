@@ -3,15 +3,15 @@
     position: relative;
     width: 100%;
     background-image: url('../img/home-bg.png');
-    background: #333;
+
     overflow: hidden;
     background-size: cover;
     background-position: center center;
-    z-index: -3;
+    z-index: 1;
 }
 
 .demo-1 .large-header {
-    /* background-image: url('../img/demo-1-bg.jpg'); */
+    /* background-image: url('../assets/img/home-bg.png'); */
 }
 .logo_box{
     width: 400px;
@@ -49,7 +49,7 @@
     margin-bottom: 30px;
     border-radius: 50px;
     position: relative;
-    border: rgba(255,255,255,0.2) 2px solid !important;
+    /* border: rgba(255,255,255,0.2) 2px solid !important; */
 }
 .u_user{
     width: 25px;
