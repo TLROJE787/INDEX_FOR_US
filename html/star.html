@@ -14,6 +14,17 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 
 <style scoped>
+        /* window */
+        body {
+	    height: 100%;
+	    /* position: relative; */
+	    width: 100%;
+	    overflow: hidden;
+	    /* padding: 142px 0; */
+	    opacity: 0;
+	    transition: opacity 1s ease;
+        }
+        /* window end */
        /* 导航 */
         .clear-fix::after{
             content: '';
@@ -208,6 +219,7 @@
             width: 160px;
             height: 140px;
             z-index: 3;
+            transition: all .5s ease;
         }
         .banner-sign {
             display: block;
@@ -332,19 +344,19 @@ letter-spacing: 4.2pt; */
                                     </li>
                                     <li onclick="active(2)" class="">
                                             <a href="https://tlroje787.github.io/SELWEB/">
-                                                我们的简历
+                                                李小雪的首页
                                                 <div></div>
                                             </a>
                                     </li>
                                     <li onclick="active(3)" class="">
                                             <a href="https://tlroje787.github.io/SELWEB/">
-                                                我们的作品集
+                                                张闯的首页
                                                 <div></div>
                                             </a>
                                     </li>
                                     <li onclick="active(4)" class="">
                                             <a href="https://tlroje787.github.io/SELWEB/">
-                                                我们的个人技能
+                                                我们的联系方式
                                                 <div></div>
                                             </a>
                                     </li>
@@ -357,7 +369,7 @@ letter-spacing: 4.2pt; */
                     <canvas id="demo-canvas"></canvas>
           <!-- START MY PROJECT -->
           <!-- 共同页 -->
-          <div class="all">
+          <div class="all" onload="load()">
                 <div class="big-img">
                     <span class="big-img-title">Record Our Love Story With Words</span>
                     <span class="banner-introduce">欢迎来到张闯&amp;李小雪的博客，这里有我们的相关介绍。请点击其中一个人的头像显示详细内容。有我们的简历。因为目前我们都是大三学生，所以还有一些不足，但依然很欢迎各位观看。</span>
@@ -436,7 +448,7 @@ letter-spacing: 4.2pt; */
         <script src="js/EasePack.min.js"></script>
         <script src="js/rAF.js"></script>
         <script src="js/demo-1.js"></script>
-
+        
     </body>
     <script>
                 active=function(index){
@@ -543,7 +555,28 @@ letter-spacing: 4.2pt; */
                         break;
                 }
             }
-            // 头像点击事件结束            
+            // 头像点击事件结束
+            //load()事件
+                let h5=document.getElementsByTagName('body')[0];
+                h5.style.opacity=0;
+                var BigImg=document.getElementsByClassName('big-img')[0];
+                var zc=document.getElementById('zc');
+                var lxx=document.getElementById('lxx');
+                // cont-info-heart
+                var CIH=document.getElementsByClassName('cont-info-heart')[0];
+                 BigImg.style.top=-100+'%';
+                 zc.style.opacity=0;
+                 lxx.style.opacity=0;
+                 CIH.style.top=300+'%';
+                setTimeout(() => {
+                    BigImg.style.top=0;
+                    zc.style.opacity=1;
+                    lxx.style.opacity=1;
+                    CIH.style.top=49+'%';   
+                }, 500);
+                setTimeout(() => {
+                    h5.style.opacity=1;
+                }, 100);        
     </script>
 <!-- 注释：
 转到我的网站473行
