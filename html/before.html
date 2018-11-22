@@ -79,11 +79,11 @@ canvas {
 	/* left: 0; */
     left: 50%;
     margin-left: -350px;
-    background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
-    /* -webkit-text-fill-color: transparent; */
+    background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,black 30%, black 40%, black 50%,black 60%,black 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+    -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
     -webkit-background-size: 200% 100%; 
-    -webkit-animation: masked-animation 4s linear infinite;
+    -webkit-animation: masked-animation2 4s linear infinite;
     font-size: 35px;
 }
 @keyframes masked-animation {
@@ -92,6 +92,17 @@ canvas {
     }
     100% {
         background-position: -100%  0;
+    }
+}
+@keyframes masked-animation2 {
+    0% {
+        background-position: 0  0;
+    }
+    50% {
+        background-position: -100%  0;
+    }
+	100% {
+        background-position: -200%  0;
     }
 }
 .player{
