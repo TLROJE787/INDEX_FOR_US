@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello World</title>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+html, 
+body {
+	height: 100%;
+	/* position: relative; */
+	width: 100%;
+	overflow: hidden;
+	/* padding: 142px 0; */
+}
+
+body {
+	background: black;
+}
+
+canvas {
+	background: white;
+	display: block;
+	/* margin-top: -15px; */
+	/* width: calc(100% - 600px); */
+}
+
+#c {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.font{
+	font-size: 3.5em;
+    /* color: #2d3134; */
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-weight: 600;
+	/* color:#fff; */
+	z-index: 1;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+.font2{
+	 width: 700px;
+	 height: 200px;
+	 position: fixed;
+	 left: 50%;
+	 margin-left: -169px;
+	 /* left: 0; */
+	 top:3.5rem;
+	 background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+	 -webkit-text-fill-color: transparent;
+	 -webkit-background-clip: text;
+	 z-index: 3;
+	 -webkit-background-size: 200% 100%;
+	 -webkit-animation: masked-animation 4s linear infinite;
+	 font-size: 25px;
+}
+.font3{
+	top: 6rem;
+	margin-left: -183px;
+	font-family: 'Josefin Sans', sans-serif;
+	-webkit-text-fill-color: black;
+}
+.text{
+    width: 700px;
+    height: 200px;
+    position: absolute;
+	/* left: 0; */
+    left: 50%;
+    margin-left: -350px;
+    background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+    /* -webkit-text-fill-color: transparent; */
+    -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+    -webkit-background-size: 200% 100%; 
+    -webkit-animation: masked-animation 4s linear infinite;
+    font-size: 35px;
+}
+@keyframes masked-animation {
+    0% {
+        background-position: 0  0;
+    }
+    100% {
+        background-position: -100%  0;
+    }
+}
+.player{
+	position: absolute;
+	z-index: 2;
+	top: calc(100% - 225px);
+	margin-top:100px;
+	/* top:150px; */
+	margin: 0;
+	bottom: 0;
+	right: 0px;
+	/* transform: translateX(-50%); */
+	/* background: red; */
+	/* top:-245px; */
+	/* margin-top:-245px;  */
+}
+.xxx{
+	width: 100%;
+	height: 100%;
+	top: 139px;
+	background: black;
+	position: absolute;
+	z-index: -1;
+}
+/* --------------------- 
+作者：不亏 
+来源：CSDN 
+原文：https://blog.csdn.net/a419419/article/details/78962214 
+版权声明：本文为博主原创文章，转载请附上博文链接！ */
+</style>
+</head>
+<body>
+	<Embed src="C:\CloudMusic\Kalafina - Lacrimosa.mp3"width="300px"height="300px"AUTOSTART="false" LOOP="TRUE" class="player"></Embed>
+<canvas id="c"></canvas>
+<div class="font text">欢迎来到张闯&李小雪的博客</div>
+<div class="font2">Welcome to ZC&LXX's blog</div>
+<div class="font2 font3">console.log('HELLO WORLD!');</div>
+<!-- <div class="xxx"></div> -->
+<!-- <div class="text2">点击任意位置进入主页</div> -->
+<script>
+;(function(main) {
+	var args = {};
+	window.onload = function() {
+		main(args);
+	};
+})(function(args) {
+
+	'use strict';
+
+	var Box = function(x, y, w, h, s) {
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
+		this.s = s;
+		this.a = Math.random() * Math.PI * 2;
+		this.hue = Math.random() * 360;
+	};
+
+	Box.prototype = {
+		constructor: Box,
+		update: function() {
+			this.a += Math.random() * 0.5 - 0.25;
+			this.x += Math.cos(this.a) * this.s;
+			this.y += Math.sin(this.a) * this.s;
+			this.hue += 5;
+			if(this.x > WIDTH) this.x = 0;
+			else if(this.x < 0) this.x = WIDTH;
+			if(this.y > HEIGHT) this.y = 0;
+			else if(this.y < 0) this.y = HEIGHT;
+		},
+		render: function(ctx) {
+			ctx.save();
+			ctx.fillStyle = 'hsla(' + this.hue + ', 100%, 50%, 1)';
+			ctx.translate(this.x, this.y);
+			ctx.rotate(this.a);
+			ctx.fillRect(-this.w, -this.h / 2, this.w, this.h);
+			ctx.restore();
+		}
+	};
+
+	var Circle = function(x, y, tx, ty, r) {
+		this.x = x;
+		this.y = y;
+		this.ox = x;
+		this.oy = y;
+		this.tx = tx;
+		this.ty = ty;
+		this.lx = x;
+		this.ly = y;
+		this.r = r;
+		this.br = r;
+		this.a = Math.random() * Math.PI * 2;
+		this.sx = Math.random() * 0.5;
+		this.sy = Math.random() * 0.5;
+		this.o = Math.random() * 1;
+		this.delay = Math.random() * 200;
+		this.delayCtr = 0;
+		this.hue = Math.random() * 360;
+	};
+
+	Circle.prototype = {
+		constructor: Circle,
+		update: function() {
+
+			if(this.delayCtr < this.delay) {
+				this.delayCtr++;
+				return;
+			}
+
+			this.hue += 1;
+			this.a += 0.1;
+
+			this.lx = this.x;
+			this.ly = this.y;
+
+			if(!clickToggle) {
+				this.x += (this.tx - this.x) * this.sx;
+				this.y += (this.ty - this.y) * this.sy;					
+			} else {
+				this.x += (this.ox - this.x) * this.sx;
+				this.y += (this.oy - this.y) * this.sy;										
+			}
+
+
+			this.r = this.br + Math.cos(this.a) * (this.br * 0.5);
+		},
+		render: function(ctx) {
+
+			ctx.save();
+			ctx.globalAlpha = this.o;
+			ctx.fillStyle = 'hsla(' + this.hue + ', 100%, 50%, 1)';
+			ctx.translate(this.x, this.y);
+			ctx.beginPath();
+			ctx.arc(0, 0, this.r, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.restore();
+
+			if(clickToggle) {
+				ctx.save();
+				ctx.strokeStyle = 'hsla(' + this.hue + ', 100%, 50%, 1)';
+				ctx.beginPath();
+				ctx.moveTo(this.lx, this.ly);
+				ctx.lineTo(this.x, this.y);
+				ctx.stroke();
+				ctx.restore();			
+			}
+
+
+		}
+	};
+
+	var txtCanvas = document.createElement('canvas');
+	var txtCtx = txtCanvas.getContext('2d');
+
+	var c = document.getElementById('c');
+	var ctx = c.getContext('2d');
+
+	var WIDTH = c.width = window.innerWidth;
+	var HEIGHT = c.height = window.innerHeight;
+	var imgData = null;
+	var idx = null;
+	var skip = 4;
+	var circles = [];
+	var circle = null;
+	var a = null;
+	var clickToggle = false;
+	var boxList = [];
+	var box = null;
+
+	txtCanvas.width = WIDTH;
+	txtCanvas.height = HEIGHT;
+
+	txtCtx.font = 'bold 130px Sans-serif';
+	txtCtx.textAlign = 'center';
+	txtCtx.baseline = 'middle';
+	txtCtx.fillText('L X X & Z C', WIDTH / 2, HEIGHT / 2);
+	ctx.font = 'bold 16px Monospace';
+	ctx.textAlign = 'center';
+	ctx.baseline = 'middle';
+
+	imgData = txtCtx.getImageData(0, 0, WIDTH, HEIGHT).data;
+
+	for(var y = 0; y < HEIGHT; y += skip) {
+		for(var x = 0; x < WIDTH; x += skip) {
+			idx = (x + y * WIDTH) * 4 - 1;
+			if(imgData[idx] > 0) {
+				a = Math.PI * 2 * Math.random();
+				circle = new Circle(
+					WIDTH / 2 + Math.cos(a) * WIDTH,
+					HEIGHT / 2 + Math.sin(a) * WIDTH,
+					x, 
+					y,
+					Math.random() * 4
+				);
+				circles.push(circle);
+			}
+		}
+	}
+
+	for(var b = 0; b < 10; b++) {
+		box = new Box(
+				WIDTH * Math.random(),
+				HEIGHT * Math.random(),
+				5,
+				2,
+				5 + Math.random() * 5
+			);
+		boxList.push(box);
+	}
+
+	// 以下为自己代码
+	window.addEventListener('click',function(e){
+		clickToggle = !clickToggle;
+		setTimeout(()=>{
+	 	window.location.href='https://tlroje787.github.io/INDEX_FOR_US/html/star.html';
+		},1000)	
+	})
+	// 以上为自己代码
+	// c.addEventListener('click', function(e) {
+	// 	clickToggle = !clickToggle;
+	// 	setTimeout(()=>{
+	//  	window.location.href='https://tlroje787.github.io/INDEX_FOR_US/html/star.html';
+	// 	},1000)			
+	// });
+
+	requestAnimationFrame(function loop() {
+		requestAnimationFrame(loop);
+
+		ctx.globalCompositeOperation = 'source-over';
+		ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+		ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+		ctx.fillStyle = 'white';
+		ctx.fillText('点击任意位置进入主页', WIDTH / 2, HEIGHT / 2 + 100);					
+
+		ctx.globalCompositeOperation = 'lighter';
+
+		for(var i = 0, len = circles.length; i < len; i++) {
+			circle = circles[i];
+			circle.update();
+			circle.render(ctx);
+		}
+
+		for(var j = 0; j < boxList.length; j++) {
+			box = boxList[j];
+			box.update();
+			box.render(ctx);
+		}
+
+	});
+
+
+});
+</script>
+
+</body>
+</html>
