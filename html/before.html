@@ -17,10 +17,12 @@ body {
 	width: 100%;
 	overflow: hidden;
 	/* padding: 142px 0; */
+	opacity: 1;
+	transition: opacity .5s ease;
 }
 
 body {
-	background: black;
+	/* background: black; */
 }
 
 canvas {
@@ -304,9 +306,14 @@ canvas {
 	// 以下为自己代码
 	window.addEventListener('click',function(e){
 		clickToggle = !clickToggle;
-		setTimeout(()=>{
-	 	window.location.href='https://tlroje787.github.io/INDEX_FOR_US/html/star.html';
-		},1000)	
+		setTimeout(()=>{setTimeout(()=>{
+		 // window.location.href='https://tlroje787.github.io/INDEX_FOR_US/html/star.html';
+		 window.location.href='C:/Users/Administrator/Desktop/ALL/WEC/vuecli/GIT/self_web_station/website/public/html/star.html';
+		//  C:\Users\Administrator\Desktop\ALL\WEC\vuecli\GIT\self_web_station\website\public\html
+		},500)	
+		 let h5=document.getElementsByTagName('html')[0];
+		 h5.style.opacity=0;
+		},500)	
 	})
 	// 以上为自己代码
 	// c.addEventListener('click', function(e) {
