@@ -86,12 +86,26 @@ canvas {
     -webkit-animation: masked-animation2 4s linear infinite;
     font-size: 35px;
 }
+.text2{
+	/* width: 700px; */
+    /* height: 200px; */
+    /* position: absolute; */
+	/* left: 0; */
+    /* left: 50%; */
+    /* margin-left: -350px; */
+    background-image: -webkit-linear-gradient(left,#CC00CC,#CCCCFF 10%,#00FFFF 20%,#66ffff 30%, black 40%, black 50%,black 60%,#66ffff 70%,#00FFFF 80%,#CCCCFF 90%,#CC00CC 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+    -webkit-background-size: 200% 100%; 
+    -webkit-animation: masked-animation2 4s linear infinite;
+    /* font-size: 35px; */
+}
 @keyframes masked-animation {
     0% {
         background-position: 0  0;
     }
     100% {
-        background-position: -100%  0;
+        background-position: -200%  0;
     }
 }
 @keyframes masked-animation2 {
@@ -139,7 +153,7 @@ canvas {
 <canvas id="c"></canvas>
 <div class="font text">欢迎来到张闯&李小雪的博客</div>
 <div class="font2">Welcome to ZC&LXX's blog</div>
-<div class="font2 font3">console.log('HELLO WORLD!');</div>
+<p class="font2 font3">console.log('<span class="text2">HELLO WORLD!</span>');</p>
 <!-- <div class="xxx"></div> -->
 <!-- <div class="text2">点击任意位置进入主页</div> -->
 <script>
