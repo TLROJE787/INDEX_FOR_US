@@ -119,16 +119,18 @@
           transition: all 1.7s ease-in-out;
           }
         #lxx{
-          background: url('./img/lxx.jpg');
+          background: url('./img/Lxx-header.jpg') no-repeat round;
+            background-size: 100% 100%;
           cursor:pointer;
         }
         #zc{
-          background: url('./img/zc.jpg');
+          background: url('./img/Zc-header.jpg') no-repeat round;
+          background-size: 100% 100%;
           cursor:pointer;
         }
         .person-container-we{
             position: fixed;
-            top: 7%;
+            top: -17%;
             /* padding-top: 25px; */
             width: 1200px;
             height: 340px;
@@ -167,8 +169,8 @@
         }
         .big-img-title{
             display: block;
-            margin-top: 70px;
-            margin-bottom: 85px;
+            margin-top: 40px;
+            margin-bottom: 35px;
             font-family: arial;
             font-size: 60px;
             color: #ffffff;
@@ -230,14 +232,9 @@
             font-size: 24px;
             color: #ffffff;
             text-align: right;
-        }
-        .banner-sign {
-            display: block;
-            margin: 30px auto 0;
-            width: 880px;
-            font-size: 24px;
-            color: #ffffff;
-            text-align: right;
+            position:absolute;
+            top:72%;
+            right:10%;
         }
         .zc-text{
             font-family: verdana, sans-serif;
@@ -313,9 +310,11 @@ letter-spacing: 4.2pt; */
     transition: all .6s ease-in-out;
 }
 .star-text-bottom{
-    margin-top:113px;
+    /*margin-top:113px;*/
+    position: relative;
     width: 400px; 
-    height:40x;
+    height:40px;
+    top:-66%;
     padding: 10px 20px;
     border-bottom: 1px #fff solid;
     text-align: center;
@@ -328,7 +327,8 @@ letter-spacing: 4.2pt; */
     position: absolute;
     left: 175px;
     /* bottom: 100px; */
-    top: 531px;
+    /*top: 50%;*/
+    margin-top: -22%;
     font-size: 100px;
     height: 20px;
     color: #ff0000;
@@ -364,6 +364,9 @@ letter-spacing: 4.2pt; */
 <![endif]-->
 </head>
 <body>
+        <!-- <audio id='audioPlay' src='./music/B.mp3' hidden='true'></audio>
+        <embed src="./music/B.mp3" hidden="true" type=""></embed> -->
+        <iframe src='./TEST.html'></iframe>
         <div class="container demo-1">
                     <div class="container">
                         <div class="wrap">
@@ -392,7 +395,7 @@ letter-spacing: 4.2pt; */
                                             </a>
                                     </li>
                                     <li onclick="active(4)" class="">
-                                            <a href=https://lixiaoxue111.github.io/self_web_station/dist/introduce">
+                                            <a href='https://tlroje787.github.io/INDEX_FOR_US/vue/introduce/'>
                                                 项目介绍
                                                 <div></div>
                                             </a>
@@ -519,18 +522,18 @@ letter-spacing: 4.2pt; */
                         {
                             if(tempForAddZc==true){
                                 // alert('sec');
-                                window.location.href = 'http://www.baidu.com/';
+                                window.location.href = 'https://tlroje787.github.io/INDEX_FOR_US/html/zc/index.html';
                             }
                             console.log(tempForAddZc);
                             tempForAddZc=true;
                             tempForAddLxx=false;
                             console.log(tempForAddZc);
-                            self.style.left="279px";
-                            self.style.top="-500px";
+                            self.style.left="50%";
+                            self.style.top="-100%";
                             lxx.style.left=0;
                             lxx.style.top=0;
                             BigImg.style.left=BigImg.offsetWidth+'px';
-                            setTimeout(()=>{Bg.style.top=730+'px';Bg.style.opacity=0.5;Bg.style.index=-1;},2000);
+                            setTimeout(()=>{Bg.style.top=60+'%';Bg.style.opacity=0.5;Bg.style.index=-1;},2000);
                             lxxIntroduce.style.opacity=0;
                             zcIntroduce.style.opacity=1;
                             setTimeout(()=>{othersArr[0].style.opacity=1;
@@ -550,18 +553,18 @@ letter-spacing: 4.2pt; */
                         {
                             if(tempForAddLxx==true){
                                 // 在这里换成自己的地址
-                                window.location.href = 'https://www.so.com/';
+                                window.location.href = 'https://tlroje787.github.io/INDEX_FOR_US/html/lxx/index.html';
                             }
                             console.log(tempForAddZc);
                             tempForAddZc=false;
                             tempForAddLxx=true;
                             console.log(tempForAddZc);
-                            self.style.left="-323px";
-                            self.style.top="-500px";
+                            self.style.left="-50%";
+                            self.style.top="-100%";
                             zc.style.left=0;
                             zc.style.top=0;
                             BigImg.style.left=BigImg.offsetWidth+'px';
-                            setTimeout(()=>{Bg.style.top=730+'px';Bg.style.opacity=0.5;Bg.style.index=-1;},1700);
+                            setTimeout(()=>{Bg.style.top=60+'%';Bg.style.opacity=0.5;Bg.style.index=-1;},1700);
                             lxxIntroduce.style.opacity=1;
                             zcIntroduce.style.opacity=0;
                             setTimeout(()=>{othersArr[5].style.opacity=1;
