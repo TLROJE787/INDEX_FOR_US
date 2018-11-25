@@ -122,15 +122,18 @@
           background: url('./img/Lxx-header.jpg') no-repeat round;
             background-size: 100% 100%;
           cursor:pointer;
+          /* z-index: -1; */
         }
         #zc{
           background: url('./img/Zc-header.jpg') no-repeat round;
           background-size: 100% 100%;
           cursor:pointer;
+          /* z-index: -1; */
         }
         .person-container-we{
             position: fixed;
-            top: -17%;
+            bottom: 0;
+            /* transform: translateY(-100%); */
             /* padding-top: 25px; */
             width: 1200px;
             height: 340px;
@@ -170,7 +173,7 @@
         .big-img-title{
             display: block;
             margin-top: 40px;
-            margin-bottom: 35px;
+            /* margin-bottom: 35px; */
             font-family: arial;
             font-size: 60px;
             color: #ffffff;
@@ -182,6 +185,9 @@
             width: 880px;
             font-size: 24px;
             color: #ffffff;
+            position: relative;
+            z-index: 1;
+            /* transform: translateY(-30%); */
         }
         .person-container-left{
             width: 50%;
@@ -251,7 +257,7 @@
             /* background: rgba(23,106,178,.3); */
             z-index: -1;
             position: absolute;
-            top:0;
+            top:-140%;
             left: 0;
         }
 .star-word-container-zc{
@@ -357,6 +363,7 @@ letter-spacing: 4.2pt; */
 	 -webkit-animation: masked-animation 4s linear infinite;
 	 
 }
+
     </style>
 
 <!--[if IE]>
@@ -364,9 +371,6 @@ letter-spacing: 4.2pt; */
 <![endif]-->
 </head>
 <body>
-        <!-- <audio id='audioPlay' src='./music/B.mp3' hidden='true'></audio>
-        <embed src="./music/B.mp3" hidden="true" type=""></embed> -->
-        <iframe src='./TEST.html'></iframe>
         <div class="container demo-1">
                     <div class="container">
                         <div class="wrap">
@@ -416,6 +420,57 @@ letter-spacing: 4.2pt; */
                     <span class="banner-sign gradu">————张闯&amp;李小雪</span>
                 </div>
                 <div class="person-container-we clearfix">
+                        <div class="star-container">
+                                <!-- <div class="home_info1 ani  fadeInUp animated" swiper-animate-effect="fadeInUp" swiper-animate-delay="2.2s" swiper-animate-style-cache=" " style="visibility: visible;animation-delay:2.2s;-webkit-animation-delay:2.2s;"><p>人生就是一道坡，只有不懈攀登，才能到达顶坡，实现自我的最高价值！</p></div> -->
+                                <div class="star-word-container-zc">
+                                    <div class="star-text-header">
+                                            <span class="star-textH cyan">对于勇士来说，贫病、困窘、责难、诽谤、冷嘲热讽……，一切压迫都是前进的动力。</span>
+                                    </div>                     
+                                    <div class="star-text-other">
+                                            <span class="star-textO cyan">我叫张闯</span>
+                                    </div>
+                                    <div class="star-text-other">
+                                            <span class="star-textO cyan">21岁</span>
+                                    </div> 
+                                    <div class="star-text-other">
+                                            <span class="star-textO cyan">在校生</span>
+                                    </div> 
+                                    <div class="star-text-other">
+                                            <span class="star-textO cyan">手机：18841440695</span>
+                                    </div> 
+                                    <div class="star-text-other">
+                                            <span class="star-textO cyan">QQ：1753587865</span>
+                                    </div>
+                                    <div class="star-text-bottom">
+                                            <span class="star-textH cyan">备注：再次点击当前头像-进入张闯个人首页。<br/>点击心型图标回到主页面</span>
+                                    </div>       
+                                </div>
+                                <div class="star-word-container-lxx">
+                                        <div class="star-text-header">
+                                                <span class="star-textH pink">骄傲，是断了引线的风筝，稍纵即逝；自卑，是剪了双翼的飞鸟，难上青天。这两者都是成才的大忌。</span>
+                                        </div>                     
+                                        <div class="star-text-other">
+                                                <span class="star-textO pink">我叫李小雪</span>
+                                        </div>
+                                        <div class="star-text-other">
+                                                <span class="star-textO pink">22岁</span>
+                                        </div> 
+                                        <div class="star-text-other">
+                                                <span class="star-textO pink">在校生</span>
+                                        </div> 
+                                        <div class="star-text-other">
+                                                <span class="star-textO pink">手机：15663612208</span>
+                                        </div> 
+                                        <div class="star-text-other">
+                                                <span class="star-textO pink">QQ：523786175</span>
+                                        </div>
+                                        <div class="star-text-bottom">
+                                                <span class="star-textH pink">备注：再次点击当前头像-进入李小雪个人首页。<br/>点击心型图标回到主页面</span>
+                                        </div>       
+                                    </div>
+                                    <div class="star-textH-focuse">⬇</div>
+                                    <embed src="./music/B.mp3" hidden="true" type="">
+                          </div>
                         <img class="cont-info-heart" src="http://www.jzdlink.com/wordpress/wp-content/themes/ourLove/images/blog_heart.png" onclick="addMoveClass('we')">
                     <div class="person-container-left clearfix">
                         <div id="zc" class='person-container' onclick="addMoveClass('zc')"></div>
@@ -431,56 +486,7 @@ letter-spacing: 4.2pt; */
           </div>
           <!-- 共同页结束 -->
           <!-- 星空个人介绍页 -->
-          <div class="star-container">
-                <!-- <div class="home_info1 ani  fadeInUp animated" swiper-animate-effect="fadeInUp" swiper-animate-delay="2.2s" swiper-animate-style-cache=" " style="visibility: visible;animation-delay:2.2s;-webkit-animation-delay:2.2s;"><p>人生就是一道坡，只有不懈攀登，才能到达顶坡，实现自我的最高价值！</p></div> -->
-                <div class="star-word-container-zc">
-                    <div class="star-text-header">
-                            <span class="star-textH cyan">对于勇士来说，贫病、困窘、责难、诽谤、冷嘲热讽……，一切压迫都是前进的动力。</span>
-                    </div>                     
-                    <div class="star-text-other">
-                            <span class="star-textO cyan">我叫张闯</span>
-                    </div>
-                    <div class="star-text-other">
-                            <span class="star-textO cyan">21岁</span>
-                    </div> 
-                    <div class="star-text-other">
-                            <span class="star-textO cyan">在校生</span>
-                    </div> 
-                    <div class="star-text-other">
-                            <span class="star-textO cyan">手机：18841440695</span>
-                    </div> 
-                    <div class="star-text-other">
-                            <span class="star-textO cyan">QQ：1753587865</span>
-                    </div>
-                    <div class="star-text-bottom">
-                            <span class="star-textH cyan">备注：再次点击当前头像-进入张闯个人首页。<br/>点击心型图标回到主页面</span>
-                    </div>       
-                </div>
-                <div class="star-word-container-lxx">
-                        <div class="star-text-header">
-                                <span class="star-textH pink">骄傲，是断了引线的风筝，稍纵即逝；自卑，是剪了双翼的飞鸟，难上青天。这两者都是成才的大忌。</span>
-                        </div>                     
-                        <div class="star-text-other">
-                                <span class="star-textO pink">我叫李小雪</span>
-                        </div>
-                        <div class="star-text-other">
-                                <span class="star-textO pink">22岁</span>
-                        </div> 
-                        <div class="star-text-other">
-                                <span class="star-textO pink">在校生</span>
-                        </div> 
-                        <div class="star-text-other">
-                                <span class="star-textO pink">手机：15663612208</span>
-                        </div> 
-                        <div class="star-text-other">
-                                <span class="star-textO pink">QQ：523786175</span>
-                        </div>
-                        <div class="star-text-bottom">
-                                <span class="star-textH pink">备注：再次点击当前头像-进入李小雪个人首页。<br/>点击心型图标回到主页面</span>
-                        </div>       
-                    </div>
-                    <div class="star-textH-focuse">⬇</div>
-          </div>
+          
           <!-- HERE STOP -->
 </div>
 </div>
@@ -528,8 +534,9 @@ letter-spacing: 4.2pt; */
                             tempForAddZc=true;
                             tempForAddLxx=false;
                             console.log(tempForAddZc);
+                        
                             self.style.left="50%";
-                            self.style.top="-100%";
+                            self.style.top="-125%";
                             lxx.style.left=0;
                             lxx.style.top=0;
                             BigImg.style.left=BigImg.offsetWidth+'px';
@@ -546,7 +553,12 @@ letter-spacing: 4.2pt; */
                             },600)    
                             },600)    
                             },600)    
-                            },2000)                   
+                            },2000)
+                            let promise=new Promise((res,rej)=>{
+                                if(true){
+                                    res(data);
+                                }
+                            })                                             
                         }
                         break;
                     case 'lxx':
@@ -560,7 +572,7 @@ letter-spacing: 4.2pt; */
                             tempForAddLxx=true;
                             console.log(tempForAddZc);
                             self.style.left="-50%";
-                            self.style.top="-100%";
+                            self.style.top="-125%";
                             zc.style.left=0;
                             zc.style.top=0;
                             BigImg.style.left=BigImg.offsetWidth+'px';
