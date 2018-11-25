@@ -122,13 +122,15 @@
           background: url('./img/Lxx-header.jpg') no-repeat round;
             background-size: 100% 100%;
           cursor:pointer;
-          /* z-index: -1; */
+          position: relative;
+          z-index: 10;
         }
         #zc{
           background: url('./img/Zc-header.jpg') no-repeat round;
           background-size: 100% 100%;
           cursor:pointer;
-          /* z-index: -1; */
+          position: relative;
+          z-index: 10;
         }
         .person-container-we{
             position: fixed;
@@ -241,6 +243,7 @@
             position:absolute;
             top:72%;
             right:10%;
+            z-index: -1;
         }
         .zc-text{
             font-family: verdana, sans-serif;
@@ -416,14 +419,13 @@ letter-spacing: 4.2pt; */
           <div class="all" onload="load()">
                 <div class="big-img">
                     <span class="big-img-title gradu">Record Our Love Story With Words</span>
-                    <span class="banner-introduce gradu">欢迎来到张闯&amp;李小雪的博客，这里有我们的相关介绍。请点击其中一个人的头像显示详细内容。因为目前我们都是大三在校生，所以还有一些不足，但依然很欢迎各位观看。</span>
-                    <span class="banner-sign gradu">————张闯&amp;李小雪</span>
+                    <span class="banner-introduce gradu">欢迎来到张闯&amp;李小雪的博客，这里有我们的相关介绍。请点击其中一个人的头像显示详细内容。因为目前我们都是大三在校生，所以还有一些不足，但依然很欢迎各位观看。&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp————张闯&amp;李小雪</span</span>
                 </div>
                 <div class="person-container-we clearfix">
                         <div class="star-container">
                                 <!-- <div class="home_info1 ani  fadeInUp animated" swiper-animate-effect="fadeInUp" swiper-animate-delay="2.2s" swiper-animate-style-cache=" " style="visibility: visible;animation-delay:2.2s;-webkit-animation-delay:2.2s;"><p>人生就是一道坡，只有不懈攀登，才能到达顶坡，实现自我的最高价值！</p></div> -->
                                 <div class="star-word-container-zc">
-                                    <div class="star-text-header">
+                                    <div class="star-text-header" style="opacity=0;">
                                             <span class="star-textH cyan">对于勇士来说，贫病、困窘、责难、诽谤、冷嘲热讽……，一切压迫都是前进的动力。</span>
                                     </div>                     
                                     <div class="star-text-other">
@@ -445,7 +447,7 @@ letter-spacing: 4.2pt; */
                                             <span class="star-textH cyan">备注：再次点击当前头像-进入张闯个人首页。<br/>点击心型图标回到主页面</span>
                                     </div>       
                                 </div>
-                                <div class="star-word-container-lxx">
+                                <div class="star-word-container-lxx" >
                                         <div class="star-text-header">
                                                 <span class="star-textH pink">骄傲，是断了引线的风筝，稍纵即逝；自卑，是剪了双翼的飞鸟，难上青天。这两者都是成才的大忌。</span>
                                         </div>                     
@@ -525,6 +527,9 @@ letter-spacing: 4.2pt; */
                 var down=document.getElementById('down');
                 var bottom1=document.getElementsByClassName('star-text-bottom')[0];
                 var bottom2=document.getElementsByClassName('star-text-bottom')[1];
+                var header1=document.getElementsByClassName('star-text-header')[0];
+                var header2=document.getElementsByClassName('star-text-header')[1];
+                //star-text-header
                 // console.log(self);
                 switch (id) {
                     case 'zc':
@@ -537,12 +542,12 @@ letter-spacing: 4.2pt; */
                             tempForAddZc=true;
                             tempForAddLxx=false;
                             console.log(tempForAddZc);
-                        
+                            header1.style.opacity=1;
                             self.style.left="50%";
-                            self.style.top="-125%";
+                            self.style.top="-110%";
                             lxx.style.left=0;
                             lxx.style.top=0;
-                            down.style.opacity=1;bottom1
+                            down.style.opacity=1;
                             bottom1.style.opacity=1;
                             BigImg.style.left=BigImg.offsetWidth+'px';
                             setTimeout(()=>{Bg.style.top=75+'%';Bg.style.opacity=0.5;Bg.style.index=-1;},2000);
@@ -576,8 +581,9 @@ letter-spacing: 4.2pt; */
                             tempForAddZc=false;
                             tempForAddLxx=true;
                             console.log(tempForAddZc);
+                            header2.style.opacity=1;
                             self.style.left="-50%";
-                            self.style.top="-125%";
+                            self.style.top="-110%";
                             zc.style.left=0;
                             zc.style.top=0;
                             BigImg.style.left=BigImg.offsetWidth+'px';
@@ -601,6 +607,8 @@ letter-spacing: 4.2pt; */
                         break;
                     case 'we':
                         {
+                            header1.style.opacity=0;
+                            header2.style.opacity=0;
                             down.style.opacity=0;
                             lxx.style.left=0;
                             lxx.style.top=0;
@@ -611,11 +619,12 @@ letter-spacing: 4.2pt; */
                             tempForAddZc=false;
                             tempForAddLxx=false;
                             bottom1.style.opacity=0;bottom2.style.opacity=0;
-                            for(let i=0;i<9;i++){
+                            for(let i=0;i<10;i++){
                                 othersArr[i].style.opacity=0;
                             }
+                            // addEventListener()
                             setTimeout(()=>{
-                                for(let i=0;i<9;i++){
+                                for(let i=0;i<10;i++){
                                 othersArr[i].style.opacity=0;
                             }
                             },3000)
