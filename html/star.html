@@ -523,6 +523,8 @@ letter-spacing: 4.2pt; */
                 var zcIntroduce=document.getElementsByClassName('star-word-container-zc')[0];
                 var othersArr=document.getElementsByClassName('star-text-other');
                 var down=document.getElementById('down');
+                var bottom1=document.getElementsByClassName('star-text-bottom')[0];
+                var bottom2=document.getElementsByClassName('star-text-bottom')[1];
                 // console.log(self);
                 switch (id) {
                     case 'zc':
@@ -540,11 +542,13 @@ letter-spacing: 4.2pt; */
                             self.style.top="-125%";
                             lxx.style.left=0;
                             lxx.style.top=0;
+                            down.style.opacity=1;bottom1
+                            bottom1.style.opacity=1;
                             BigImg.style.left=BigImg.offsetWidth+'px';
                             setTimeout(()=>{Bg.style.top=75+'%';Bg.style.opacity=0.5;Bg.style.index=-1;},2000);
                             lxxIntroduce.style.opacity=0;
                             zcIntroduce.style.opacity=1;
-                            setTimeout(()=>{othersArr[0].style.opacity=1;down.style.opacity=1;
+                            setTimeout(()=>{othersArr[0].style.opacity=1;
                                 setTimeout(()=>{othersArr[1].style.opacity=1;
                                     setTimeout(()=>{othersArr[2].style.opacity=1;
                                         setTimeout(()=>{othersArr[3].style.opacity=1;
@@ -577,10 +581,12 @@ letter-spacing: 4.2pt; */
                             zc.style.left=0;
                             zc.style.top=0;
                             BigImg.style.left=BigImg.offsetWidth+'px';
+                            down.style.opacity=1;
+                            bottom2.style.opacity=1;
                             setTimeout(()=>{Bg.style.top=75+'%';Bg.style.opacity=0.5;Bg.style.index=-1;},1700);
                             lxxIntroduce.style.opacity=1;
                             zcIntroduce.style.opacity=0;
-                            setTimeout(()=>{othersArr[5].style.opacity=1;down.style.opacity=1;
+                            setTimeout(()=>{othersArr[5].style.opacity=1;
                                 setTimeout(()=>{othersArr[6].style.opacity=1;
                                     setTimeout(()=>{othersArr[7].style.opacity=1;
                                         setTimeout(()=>{othersArr[8].style.opacity=1;
@@ -604,6 +610,15 @@ letter-spacing: 4.2pt; */
                             setTimeout(()=>{Bg.style.top=0+'px';Bg.style.opacity=1;Bg.style.index=0;},2000);
                             tempForAddZc=false;
                             tempForAddLxx=false;
+                            bottom1.style.opacity=0;bottom2.style.opacity=0;
+                            for(let i=0;i<9;i++){
+                                othersArr[i].style.opacity=0;
+                            }
+                            setTimeout(()=>{
+                                for(let i=0;i<9;i++){
+                                othersArr[i].style.opacity=0;
+                            }
+                            },3000)
                         }
                         break;
                     default:
