@@ -327,7 +327,7 @@ letter-spacing: 4.2pt; */
     position: relative;
     width: 400px;
     height:40px;
-    top: -85%;
+    top: -8%;
     padding: 10px 20px;
     border-bottom: 1px #fff solid;
     text-align: center;
@@ -378,6 +378,9 @@ letter-spacing: 4.2pt; */
 <![endif]-->
 </head>
 <body>
+        <audio autoplay="autoplay">
+                <source src="./music/B.mp3" type="audio/mpeg" />
+              </audio>
         <div class="container demo-1">
                     <div class="container">
                         <div class="wrap">
@@ -474,7 +477,7 @@ letter-spacing: 4.2pt; */
                                                 <span class="star-textH pink">备注：再次点击当前头像-进入李小雪个人首页。<br/>点击心型图标回到主页面</span>
                                         </div>       
                                     </div>
-                                    <div class="star-textH-focuse" id="down" style="opacity:0;">⬇</div>
+                                    <div class="star-textH-focuse" id="down" style="opacity:0;"></div>
                                     <embed src="./music/B.mp3" hidden="true" type="">
                           </div>
                         <img class="cont-info-heart" src="http://www.jzdlink.com/wordpress/wp-content/themes/ourLove/images/blog_heart.png" onclick="addMoveClass('we')">
@@ -635,6 +638,9 @@ letter-spacing: 4.2pt; */
             }
             // 头像点击事件结束
             //load()事件
+                var bottom2=document.getElementsByClassName('star-text-bottom')[1];
+                bottom2.style.left=83+'%';
+                bottom2.style.transform='translateX(-200px)';
                 let h5=document.getElementsByTagName('body')[0];
                 h5.style.opacity=0;
                 var BigImg=document.getElementsByClassName('big-img')[0];
