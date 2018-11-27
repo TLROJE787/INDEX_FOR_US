@@ -377,9 +377,8 @@ letter-spacing: 4.2pt; */
 <![endif]-->
 </head>
 <body>
-        <audio autoplay="autoplay">
-                <source src="./music/B.mp3" type="audio/mpeg" />
-              </audio>
+    <iframe src="" frameborder="0" id="ifr"></iframe>
+        
         <div class="container demo-1">
                     <div class="container">
                         <div class="wrap">
@@ -637,6 +636,7 @@ letter-spacing: 4.2pt; */
             }
             // 头像点击事件结束
             //load()事件
+                var ifr=document.getElementById('ifr');
                 var bottom2=document.getElementsByClassName('star-text-bottom')[1];
                 bottom2.style.left=83+'%';
                 bottom2.style.transform='translateX(-200px)';
@@ -647,6 +647,7 @@ letter-spacing: 4.2pt; */
                 var lxx=document.getElementById('lxx');
                 // cont-info-heart
                 var CIH=document.getElementsByClassName('cont-info-heart')[0];
+                ifr.setAttribute("src", "./TEST.html");
                  BigImg.style.top=-100+'%';
                  zc.style.opacity=0;
                  lxx.style.opacity=0;
