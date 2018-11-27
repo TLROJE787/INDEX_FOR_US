@@ -18,7 +18,7 @@ body {
 	overflow: hidden;
 	/* padding: 142px 0; */
 	opacity: 1;
-	transition: opacity .2s ease;
+	transition: opacity .5s ease;
 }
 
 body {
@@ -160,7 +160,10 @@ canvas {
 <audio autoplay="autoplay">
 	<source src="./music/A.mp3" type="audio/mpeg" />
   </audio>
+  <iframe src="" frameborder="0" id="ifr" hidden='hidden'></iframe>
 <script>
+	var ifr=document.getElementById('ifr');
+	ifr.setAttribute("src", "./for_iframe.html");
 ;(function(main) {
 	var args = {};
 	window.onload = function() {
