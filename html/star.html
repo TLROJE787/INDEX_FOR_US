@@ -369,7 +369,26 @@ letter-spacing: 4.2pt; */
 	 -webkit-animation: masked-animation 4s linear infinite;
 	 
 }
-
+/* 附加页开始 */
+#test-on-wheel{
+    position: absolute;
+            top:0;
+            transform: translateY(-100%);
+            /* transform: translateX(50%); */
+            left: 50%;
+            margin-left: -150px;
+            /* width: 100px; */
+            /* height:50%; */
+            background: transparent;
+            transition: all .4s ease-in-out;
+            z-index: 3;
+            /* overflow: hidden; */
+}
+.music-button{
+    /* width: 100%;
+    height:100%; */
+}
+/* 附加页结束 */
     </style>
 
 <!--[if IE]>
@@ -377,8 +396,15 @@ letter-spacing: 4.2pt; */
 <![endif]-->
 </head>
 <body>
-    <iframe src="" frameborder="0" id="ifr"></iframe>
+    
+        <!-- 附加 START-->
+        <!-- <audio src="">
         
+        </audio> -->
+     <div id="test-on-wheel">
+            <iframe src="" frameborder="0" id="ifr" class="music-button"></iframe>
+        </div>
+      <!-- 附加END -->
         <div class="container demo-1">
                     <div class="container">
                         <div class="wrap">
@@ -636,7 +662,16 @@ letter-spacing: 4.2pt; */
             }
             // 头像点击事件结束
             //load()事件
-                var ifr=document.getElementById('ifr');
+
+//                 var ifr=document.getElementById('ifr');
+//                 function changeStyle(){
+//                 var x=ifr;
+// 	var y=(x.contentWindow || x.contentDocument);
+// 	if (y.document){y=y.document;}
+// 	// y.body.style.backgroundColor="#0000ff";
+//     // this.alert('')
+// 	this.alert('success');
+// }
                 var bottom2=document.getElementsByClassName('star-text-bottom')[1];
                 bottom2.style.left=83+'%';
                 bottom2.style.transform='translateX(-200px)';
@@ -660,7 +695,32 @@ letter-spacing: 4.2pt; */
                 }, 500);
                 setTimeout(() => {
                     h5.style.opacity=1;
-                }, 100);        
+                }, 100);  
+                function wheelFN(){
+    let BOD=document.getElementsByTagName('body')[0];
+    // console.log(BOD[0]);
+    let TOW=document.getElementById('test-on-wheel');
+    let mark=false;
+    let timer;
+    BOD.addEventListener('wheel',(event)=>{
+        // console.log(event);
+        // console.log(event.wheelDelta);
+        clearTimeout(timer);
+        timer=setTimeout(()=>{
+            if(event.wheelDelta>0){
+            console.log('yes');
+            TOW.style.top=-TOW.offsetHeight+'px';
+        }else{
+            console.log('no');
+            TOW.style.top=TOW.offsetHeight+'px';
+        }
+        mark = true;
+        },300)
+        
+        
+    })
+    }
+    wheelFN();          
     </script>
 <!-- 注释：
 转到我的网站473行
