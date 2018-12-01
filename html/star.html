@@ -700,13 +700,17 @@ letter-spacing: 4.2pt; */
     let BOD=document.getElementsByTagName('body')[0];
     // console.log(BOD[0]);
     let TOW=document.getElementById('test-on-wheel');
-    let mark=false;
+    let mark=true;
     let timer;
     BOD.addEventListener('wheel',(event)=>{
         // console.log(event);
         // console.log(event.wheelDelta);
-        clearTimeout(timer);
-        timer=setTimeout(()=>{
+        // clearTimeout(timer);
+        if(!mark){
+            return;
+        }
+        mark=false;
+        setTimeout(()=>{
             if(event.wheelDelta>0){
             console.log('yes');
             TOW.style.top=-TOW.offsetHeight+'px';
